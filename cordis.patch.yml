@@ -1,0 +1,9 @@
+# dsh-draw-plugin —— 轻量版（stable-diffusion.cpp）
+# 默认引擎 = 本机 SD.cpp（一键安装只需 29MB 引擎 + 2GB 模型）
+# 想换成完整版：把 defaultEngine 改成 'comfyui'
+- insert:
+    - id: dsh-draw
+      name: 'dsh-draw-plugin'
+      inject: [fs, shell, webServer]
+      config:
+        defaultEngine: 'sdcpp'

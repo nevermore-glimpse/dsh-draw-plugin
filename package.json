@@ -1,0 +1,56 @@
+{
+  "name": "dsh-draw-plugin",
+  "version": "0.5.6-dsh2",
+  "description": "DeepSeek Harness 画图插件（DSH 0.2.1-rc.2 适配版）：侧边栏整页面板，五引擎可选（Pollinations / 硅基流动 / 自定义接口 / 本地 SD.cpp 含结构化 LoRA / ComfyUI），Key 由使用者自己填。",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "text-to-image",
+    "image-generation",
+    "ai-art",
+    "pollinations",
+    "siliconflow",
+    "kolors",
+    "anime",
+    "chibi"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nevermore-glimpse/dsh-draw-plugin.git"
+  },
+  "homepage": "https://github.com/nevermore-glimpse/dsh-draw-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/nevermore-glimpse/dsh-draw-plugin/issues"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "安装说明.txt",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node test/smoke.mjs && node test/comfyui.test.mjs"
+  }
+}
